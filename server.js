@@ -2,6 +2,8 @@ const express = require('express')
 const dotenv = require('dotenv')
 const bodyParser = require('body-parser')
 const cors = require('cors')
+const emailRoutes = require('./routes/email.route')
+dotenv.config()
 
 
 const app = express();
@@ -13,6 +15,9 @@ app.use(
     limit: "10mb",
   })
 );
+
+app.use('/portfolio', emailRoutes)
+
 
 
 const PORT = process.env.PORT || 5000
