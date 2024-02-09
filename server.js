@@ -16,6 +16,10 @@ app.use(
   })
 );
 
+app.use((req,res) => {
+  res.send("Server Health Check Status Ok.")
+})
+
 app.use('/portfolio', emailRoutes)
 
 
