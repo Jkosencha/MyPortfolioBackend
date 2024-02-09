@@ -30,7 +30,8 @@ const sendEmail =async (fromEmail,userName, phoneNumber, message)=> {
         fromEmail,
         userName,
         phoneNumber,
-        message
+        message,
+        currentYear: new Date().getFullYear()
     })
 
     const params = {

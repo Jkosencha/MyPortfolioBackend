@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=320, target-densitydpi=device-dpi" />
+
+    <style type="text/css">
+      @import url(http://fonts.googleapis.com/css?family=Roboto:400,300);
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: Roboto, sans-serif;
+        box-sizing: border-box;
+        font-size: 14px;
+      }
+      img {
+        max-width: 100%;
+      }
+      body {
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-size-adjust: none;
+        width: 100% !important;
+        height: 100%;
+        line-height: 1.6;
+      }
+      table td {
+        vertical-align: top;
+      }
+      body {
+        background-color: #fff;
+      }
+      .body-wrap {
+        background-color: #fff;
+        width: 100%;
+      }
+      .container {
+        display: block !important;
+        max-width: 640px !important;
+        margin: 0 auto !important;
+        clear: both !important;
+      }
+      .content {
+        max-width: 640px;
+        margin: 0 auto;
+        display: block;
+        padding: 20px;
+      }
+      .main {
+        background: #fff;
+        border: 1px solid #dddde0;
+        border-radius: 3px;
+        color: #444447;
+      }
+      .content-wrap {
+        padding: 35px 35px 10px;
+      }
+      .content-block {
+        padding: 0 0 20px;
+      }
+      .content-block a.email-override {
+        color: #444447;
+        font-size: 14px;
+        font-weight: 400;
+      }
+      .content-block.last {
+        padding-bottom: 0;
+      }
+      .content-block.signature {
+        color: #88888b;
+      }
+      .content-block.helper-text {
+        font-size: 11px;
+        line-height: 18px;
+        color: #88888b;
+      }
+      .content-block.helper-text a.email-link {
+        color: #88888b;
+        text-decoration: underline;
+        font-size: 11px;
+      }
+      .header {
+        width: 100%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
+      .footer {
+        width: 100%;
+        clear: both;
+        color: #88888b;
+        padding: 15px 0 0 0;
+      }
+      .footer a,
+      .footer p,
+      .footer td,
+      .footer unsubscribe {
+        text-decoration: none;
+        color: #88888b;
+        font-size: 11px;
+        line-height: 18px;
+      }
+      .footer .copyright {
+        padding: 3px 0;
+      }
+      .footer .social-icon {
+        padding-bottom: 10px;
+      }
+      .footer .footer-link {
+        padding: 3px 0;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: Roboto, sans-serif;
+        color: #444447;
+        line-height: 1.2;
+        font-weight: 400;
+        margin: 40px 0 0 0;
+      }
+      h1 {
+        font-size: 32px;
+        font-weight: 300;
+      }
+      h2 {
+        font-size: 24px;
+      }
+      h3 {
+        font-size: 18px;
+      }
+      h4 {
+        font-size: 14px;
+      }
+      ol,
+      p,
+      ul {
+        margin-bottom: 20px;
+        font-weight: 400;
+      }
+      ol li,
+      p li,
+      ul li {
+        margin-left: 5px;
+        list-style-position: inside;
+      }
+      a {
+        color: #1282a3;
+        text-decoration: underline;
+      }
+      .btn-primary {
+        background-color: #0a3670;
+        cursor: pointer;
+        border-radius: 3px;
+      }
+      .btn-primary .btn-content {
+        padding: 8px 18px;
+        font-size: 16px;
+      }
+      .btn-primary .btn-content a {
+        color: #fff;
+        text-decoration: none;
+        line-height: 1.25;
+      }
+      .last {
+        margin-bottom: 0;
+      }
+      .first {
+        margin-top: 0;
+      }
+      .aligncenter {
+        text-align: center;
+      }
+      .alignright {
+        text-align: right;
+      }
+      .alignleft {
+        text-align: left;
+      }
+      .clear {
+        clear: both;
+      }
+      @media only screen and (max-width: 640px) {
+        h1,
+        h2,
+        h3,
+        h4 {
+          font-weight: 600 !important;
+          margin: 20px 0 5px !important;
+        }
+        h1 {
+          font-size: 22px !important;
+        }
+        h2 {
+          font-size: 18px !important;
+        }
+        h3 {
+          font-size: 16px !important;
+        }
+        .container {
+          width: 100% !important;
+        }
+        .content,
+        .content-wrap {
+          padding: 10px !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <table class="body-wrap">
+      <tr>
+        <td></td>
+        <td class="container" width="640">
+          <div class="content">
+            <table class="main" width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td class="content-wrap">
+                  <table width="100%" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td class="content-block">
+                        <p>Dear Jennifer,</p>
+                        <p>
+     <%= userName %> of email <%= fromEmail %> and Phone Number <%= phoneNumber %> has written to you through your portfolio. 
+    </p>
+       <p>Here is the message:</p>
+       <p><%= message %></p>
+                        </p>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="content-block">
+                        <table
+                          border="0"
+                          cellpadding="0"
+                          cellspacing="0"
+                          class="btn-primary"
+                        >
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="content-block signature">
+                        &mdash; JENNIFER KONSENCHA
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="content-block last helper-text">
+                       <p>
+      Regards,<br />
+      <%= userName %>
+    </p> You can contact us by sending an e-mail to
+                        <a
+                          href="mailto:jenniferkonsencha@gmail.com"
+                          target="_blank"
+                          class="email-link"
+                          >jenniferkonsencha@gmail.com</a
+                        >.
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            <div class="footer">
+              <table width="100%">
+                <tr>
+                  <td class="alignleft copyright" valign="middle">
+                    Copyright &copy; <%= currentYear %> Jennifer Konsencha. All rights reserved.
+                  </td>
+                  <td valign="middle" class="footer-link">
+                    <a href="https://jkosencha.github.io/" target="_blank">jkosencha.github.io</a>
+                  </td>
+                </tr>
+              </table>
+              <table>
+                <tr>
+                  <td class="content-block">
+                    This email contains sensitive, confidential and trade secret
+                    information; and no part of it shall be disclosed to third
+                    parties or reproduced in any form or by any electronic or
+                    mechanical means, including without limitation information
+                    storage and retrieval systems, without the express prior
+                    written consent of JENNIFER.
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </td>
+        <td></td>
+      </tr>
+    </table>
+  </body>
+</html>
