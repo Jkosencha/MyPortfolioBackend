@@ -1,8 +1,10 @@
 const {SendEmailCommand , SESClient } = require('@aws-sdk/client-ses')
+const dotenv = require('dotenv')
+dotenv.config()
 const path = require('path')
 const ejs = require('ejs')
 
-
+console.log("AccsKey", process.env.AMAZON_ACCESS_KEY)
 const sesClient = new SESClient({
     region:"us-east-1",
     credentials:{
@@ -19,33 +21,38 @@ const mainEntryPoint = async(params)=>{
            resolve(`Email was sent succesfully`)
            console.log(response.MessageId)
         } catch (error) {
+            console.log(error)
             reject(error.message)
         }
     }) 
 }
 
 const sendEmail =async (fromEmail,userName, phoneNumber, message)=> {
-    const templaPath = path.join(process.cwd(), "templates/email.html")
-    const emailHtml = await ejs.renderFile(templaPath, {
+    const templatePath = path.join(process.cwd(), "templates/email.html")
+    const emailHtml = await ejs.renderFile(templatePath, {
         fromEmail,
         userName,
         phoneNumber,
         message,
         currentYear: new Date().getFullYear()
     })
-
     const params = {
         Destination:{
-            ToAddresses:["jenniferkosencha@gmail.com"]
+            ToAddresses:["kosenchajennifer@gmail.com"]
         },
         Message:{
-            Charset:"UTF-8",
-            Data: emailHtml
-        },
-        Subject:{
+          Body:{
+            Html:{
+                Charset:"UTF-8",
+                Data: emailHtml
+               }
+          },
+          Subject:{
             Charset:"UTF-8",
             Data: "You got a Message From Your Portfolio"
         },
+        },
+       
         Source: process.env.SOURCE_EMAIL 
     }
     const response  = await mainEntryPoint(params)

@@ -1,9 +1,10 @@
 const express = require('express')
 const dotenv = require('dotenv')
+dotenv.config()
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const emailRoutes = require('./routes/email.route')
-dotenv.config()
+
 
 
 const app = express();
@@ -16,15 +17,15 @@ app.use(
   })
 );
 
-app.use((req,res) => {
+app.get("/", (req,res) => {
   res.send("Server Health Check Status Ok.")
 })
 
 app.use('/portfolio', emailRoutes)
 
 
-
-const PORT = process.env.PORT || 5000
+console.log(process.env.PORT)
+const PORT = process.env.PORT
 app.listen(PORT, async() => {
     console.log(`Server is running at http://localhost:${PORT}`);
 })
